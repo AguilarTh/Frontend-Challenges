@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mortgage Calculator</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main id="container">
         <section id="calculator">
-            <form id="form">
+            <form id="form" autocomplete="off" method="post">
                 <div id="top-line">
                     <h1>Mortgage Calculator</h1>
                     <button type="reset" id="clear-button">Clear All</button>
@@ -24,6 +24,7 @@
                         <span class="form-icon">£</span>
                         <input type="number" name="amount" id="iAmount" required>
                     </div>
+                    <span class="error-msg" id="iAmount-error-msg"></span>
                 </div>
 
                 <div id="middle-line">
@@ -35,6 +36,7 @@
                             <input type="number" name="term" id="iTerm" required>
                             <span class="form-icon">years</span>
                         </div>
+                        <span class="error-msg" id="iTerm-error-msg"></span>
                     </div>
 
                     <div class="input-box">
@@ -45,6 +47,7 @@
                             <input type="number" name="rate" id="iRate" required>
                             <span class="form-icon">%</span>
                         </div>
+                        <span class="error-msg" id="iRate-error-msg"></span>
                     </div>
                 </div>
 
@@ -52,7 +55,7 @@
                     <legend>Mortgage Type</legend>
                     
                     <div class="options-select">
-                        <input type="radio" name="mortType" id="iRepay" value="repayment" checked>
+                        <input type="radio" name="mortType" id="iRepay" value="repayment">
                         <label for="iRepay">Repayment</label>
                         
                     </div>
@@ -61,6 +64,8 @@
                         <input type="radio" name="mortType" id="iInterest" value="intereset_only">
                         <label for="iInterest">Intereset Only</label>
                     </div>
+
+                    <span class="error-msg" id="iBox-error-msg"></span>
                 </fieldset>
 
                 <div id="calculate-button">
@@ -71,13 +76,13 @@
         </section>
 
         <section id="display">
-            <div class="display-start ">
+            <div class="display-start hidden">
                 <img src="./assets/illustration-empty.svg" alt="imagem pre-resultado" id="img-display-start">
                 <h1>Results shown here</h1>
                 <p>Complete the form and click "calculate repaymentes" to see what your monthly repayment would be.</p>
             </div>
 
-            <div class="display-results hidden">
+            <div class="display-results ">
                 <h1>Your results</h1>
                 <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
                 <div id="results-number">
@@ -94,5 +99,6 @@
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

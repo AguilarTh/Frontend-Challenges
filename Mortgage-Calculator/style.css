@@ -38,7 +38,7 @@ body {
 
 #container {
     width: 75%;
-    height: 70%;
+    height: 75%;
     display: flex;
     align-items: center;
     gap: 3.5rem;
@@ -49,12 +49,12 @@ body {
 }
 
 #calculator {
-    width: 50%;
+    width: 45%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 2rem;
+    justify-content: space-evenly;
+    gap: 1rem;
     padding: 2rem;
     padding-right: 0rem;
     color: var(--slate900);
@@ -64,7 +64,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 #top-line{
@@ -88,7 +88,11 @@ body {
     font-size: 0.9rem;
     color: var(--slate700);
     text-decoration: underline;
-    font-size: 300;
+}
+
+#top-line button:hover {
+    color: var(--slate900);
+    font-weight: 700;
 }
 
 .input-box label {   
@@ -103,18 +107,45 @@ body {
     border-radius: 7px;
     padding: 2px; /* aumentar o "tamanho" da barra */
     margin-top: 5px; /* separar um pouco do label */ 
+    margin-bottom: 7px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.3)
+}
+
+.input-field:focus-within {  /* ativa sempre q um elemento descendente fica em focus */
+    background-color: var(--lime);
+    border: none;
+    cursor: pointer;
+}
+
+.input-field:focus-within .form-icon {
+    color: var(--slate900);
+}
+
+.input-field:focus-within input {
+    cursor: pointer;
+}
+
+.input-field:hover {
+    border-color: var(--slate900);
+    border-width: 1.8px;
+}
+
+.input-field:hover input {
+    cursor: pointer;
 }
 
 .form-icon {
     padding: 0rem 1rem;
     font-weight: 800;
     color: var(--slate700);
+    cursor: pointer;
 }
 
 .input-field input {
     background-color: var(--white);
     border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     width: 100%;
     font-size: 1rem;
     font-weight: 800;
@@ -182,10 +213,14 @@ body {
     padding-left: 0.8rem;
 }
 
+#calculate-button:hover {
+    background-color: hsla(61, 70%, 52%, 0.623);
+}
+
 #display {
     background-color: var(--slate900);
     border-bottom-left-radius: 100px;
-    width: 50%;
+    width: 55%;
     height: 100%;
     padding: 2rem;
     display: flex;
@@ -220,6 +255,7 @@ body {
     justify-content: flex-start;
     gap: 2rem;
     padding: 0rem 2.5rem;
+    margin-top: 20px;
 }
 
 .display-results h1 {
@@ -289,7 +325,22 @@ body {
     margin-top: 0.7rem;
 }
 
+/* --- ERROR MSGS --- */
 
+.error-msg{
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 500;
+    left: 0;
+    visibility: hidden;
+    opacity: 0; 
+    transition: opacitiy 0.2s;
+}
+
+.input-box.has-error .error-msg {
+    visibility: visible;
+    opacity: 1;
+}
 
 .hidden {
     display: none;
