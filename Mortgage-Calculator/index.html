@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="container">
+        <section id="calculator">
+            <form id="form">
+                <div id="top-line">
+                    <h1>Mortgage Calculator</h1>
+                    <button type="reset" id="clear-button">Clear All</button>
+                </div>
+
+                <div class="input-box">
+                    <label for="iAmount">
+                        Mortgage Amount
+                    </label>
+                    <div class="input-field">
+                        <span class="form-icon">£</span>
+                        <input type="number" name="amount" id="iAmount" required>
+                    </div>
+                </div>
+
+                <div id="middle-line">
+                    <div class="input-box">
+                        <label for="iTerm">
+                            Mortgage Term
+                        </label>
+                        <div class="input-field">
+                            <input type="number" name="term" id="iTerm" required>
+                            <span class="form-icon">years</span>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="iRate">
+                            Interest Rate
+                        </label>
+                        <div class="input-field">
+                            <input type="number" name="rate" id="iRate" required>
+                            <span class="form-icon">%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <fieldset class="options-box">
+                    <legend>Mortgage Type</legend>
+                    
+                    <div class="options-select">
+                        <input type="radio" name="mortType" id="iRepay" value="repayment" checked>
+                        <label for="iRepay">Repayment</label>
+                        
+                    </div>
+
+                    <div class="options-select">
+                        <input type="radio" name="mortType" id="iInterest" value="intereset_only">
+                        <label for="iInterest">Intereset Only</label>
+                    </div>
+                </fieldset>
+
+                <div id="calculate-button">
+                    <img src="./assets/icon-calculator.svg" alt="icone da calculadora" id="img-calc-button">
+                    <button type="submit" class="submit-button">Calcule Repayments</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="display">
+            <div class="display-start ">
+                <img src="./assets/illustration-empty.svg" alt="imagem pre-resultado" id="img-display-start">
+                <h1>Results shown here</h1>
+                <p>Complete the form and click "calculate repaymentes" to see what your monthly repayment would be.</p>
+            </div>
+
+            <div class="display-results hidden">
+                <h1>Your results</h1>
+                <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+                <div id="results-number">
+                    <div id="monthly-number">
+                        <p>Your monthly repayments</p>
+                        <h2>£1,234.00</h2>
+                    </div>
+
+                    <div id="total-number">
+                        <p>Total you'll repay over the term</p>
+                        <h3>£539,322.94</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

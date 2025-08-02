@@ -1,0 +1,19 @@
+            HTML/CSS:
+
+* Fazer a formatação dos numeros ( usa o html ou js? )
+* Msgs de Erro
+* Focus do Form
+* Conferir se os estilos de tipografia estão certos 
+* Fazer a responsividade para Mobile / Tablet
+
+            JS:
+
+* Separar elementos para resgastar
+* Função Calculo
+* Retornar o Resultado na 2 janela
+* Função de Error
+
+
+        !OBS:
+
+* Usavel apenas com o teclado?

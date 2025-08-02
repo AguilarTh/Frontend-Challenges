@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap');
+/* weight 200-800 */
+
+:root {
+    --red-input-error: hsl(0, 100%, 66%);
+    /* Primary */
+    --lime: hsl(61, 70%, 52%);
+    --red: hsl(4, 69%, 50%);
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --slate100: hsl(202, 86%, 94%);
+    --slate300: hsl(203, 41%, 72%);
+    --slate500: hsl(200, 26%, 54%);
+    --slate700: hsl(200, 24%, 40%);
+    --slate900: hsl(202, 55%, 16%);
+}
+
+* {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--slate100);
+}
+
+#container {
+    width: 75%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    background-color: var(--white);
+    border-radius: 35px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    overflow: hidden; /* lembrar de sempre colcoar isso para nao "vazar" */
+}
+
+#calculator {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    padding-right: 0rem;
+    color: var(--slate900);
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+#top-line{
+    display: flex;
+    justify-content: space-between;
+}
+
+#top-line h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+#top-line button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    
+    align-self: center;
+    font-size: 0.9rem;
+    color: var(--slate700);
+    text-decoration: underline;
+    font-size: 300;
+}
+
+.input-box label {   
+    color: var(--slate700);
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    background-color: var(--slate100);
+    border: 0.4px solid var(--slate500);
+    border-radius: 7px;
+    padding: 2px; /* aumentar o "tamanho" da barra */
+    margin-top: 5px; /* separar um pouco do label */ 
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3)
+}
+
+.form-icon {
+    padding: 0rem 1rem;
+    font-weight: 800;
+    color: var(--slate700);
+}
+
+.input-field input {
+    background-color: var(--white);
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 0.8rem;
+}
+
+.input-field input::-webkit-outer-spin-button,  /* tira a seta de aumentar/diminuir numero */
+.input-field input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.input-field input:focus {
+    outline: none;
+}
+
+#middle-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.options-box {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.options-box legend{
+    color: var(--slate700);
+    margin-bottom: 0.5rem;
+}
+
+.options-select {
+    border: 0.4px solid var(--slate500);
+    border-radius: 3px;
+    padding: 0.5rem;
+}
+
+.options-select input {
+    margin-left: 1rem;
+}
+
+.options-select label {
+    color: var(--slate900);
+    font-weight: 700;
+    margin: 0px 1rem;
+}
+
+#calculate-button {
+    border-radius: 25px;
+    padding: 0.7rem 3rem;
+    background-color: var(--lime);
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#calculate-button button {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    padding-left: 0.8rem;
+}
+
+#display {
+    background-color: var(--slate900);
+    border-bottom-left-radius: 100px;
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.display-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0rem 2.5rem;
+}
+
+.display-start h1 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.display-start p {
+    color: var(--slate500);
+    text-align: center;
+}
+
+.display-results {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 0rem 2.5rem;
+}
+
+.display-results h1 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.display-results p {
+    color: var(--slate500);
+    text-align: left;
+    margin-bottom: 0.7rem;
+}
+
+#results-number {
+    background-color: hsl(201, 52%, 13%);
+    border-radius: 7px;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#results-number::before {
+    position: absolute;
+    content: '';
+    background-color: var(--lime);
+    width: 100%;
+    height: 2%; 
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+}
+
+#results-number p {
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+}
+
+#monthly-number {
+    position: relative;
+}
+
+#monthly-number h2 {
+    color: var(--lime);
+    font-size: 3.5rem;
+    margin: 0.3rem 0px 1.7rem 0px;
+}
+
+#monthly-number::after {
+    position: absolute;
+    content: '';
+    background-color: var(--slate700);
+    width: 100%;
+    height: 0.25%;
+    bottom: 0;
+    left: -2000;
+}
+
+#total-number h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-top: 0.7rem;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
